@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
@@ -15,10 +16,14 @@ namespace Business.Concrete
         {
             _orderDal=orderDal;
         }
-        public void Add(Order order)
+        public IResult Add(Order order)
         {
+            
             _orderDal.Add(order);
+            return new Result(true,"Order başarıyla eklendi");
             
         }
+
+        
     }
 }
