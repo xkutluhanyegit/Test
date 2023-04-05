@@ -16,5 +16,6 @@ namespace Entities.DTO
 
         public string RegisterNo { get; set; }
         public bool Check { get; set; }
+        public int? Week { get; set; }
     }
 }

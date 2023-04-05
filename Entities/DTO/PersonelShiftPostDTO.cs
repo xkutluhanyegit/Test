@@ -12,6 +12,7 @@ namespace Entities.DTO
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Service { get; set; }
+        public int Week { get; set; }
         public string depID { get; set; }
     }
 }

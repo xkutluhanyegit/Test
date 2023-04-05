@@ -18,6 +18,9 @@ namespace Business.Abstract
 
         IDataResult<List<PersonelDepartmanDetailDTO>> PersonelDepartmanDetailDTO(string departmanID);
 
-        
+        IDataResult<List<PersonelDepartmanDetailDTO>> PersonelDepartmanNoShiftDTO(string departmanID);
+
+
+
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\Core.csproj": {}
+    "/Users/kutluhanyegit/Desktop/Test/Core/Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\Core.csproj": {
+    "/Users/kutluhanyegit/Desktop/Test/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\Core.csproj",
+        "projectUniqueName": "/Users/kutluhanyegit/Desktop/Test/Core/Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\kutluhan.yegit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\obj\\",
+        "projectPath": "/Users/kutluhanyegit/Desktop/Test/Core/Core.csproj",
+        "packagesPath": "/Users/kutluhanyegit/.nuget/packages/",
+        "outputPath": "/Users/kutluhanyegit/Desktop/Test/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kutluhan.yegit\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/kutluhanyegit/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.406/RuntimeIdentifierGraph.json"
         }
       }
     }

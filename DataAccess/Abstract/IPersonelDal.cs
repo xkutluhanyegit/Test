@@ -8,10 +8,11 @@ using Entities.DTO;
 
 namespace DataAccess.Abstract
 {
-    public interface IPersonelDal:IEntityRepository<Personel1>
+    public interface IPersonelDal : IEntityRepository<Personel1>
     {
         List<PersonelDetailDTO> GetAllPersonelDetailDTO();
         List<PersonelDepartmanDetailDTO> PersonelDepartmanDetailDTO(string departmanID);
-        
+        List<PersonelDepartmanDetailDTO> PersonelDepartmanDetailDTOWithWeek(string departmanID);
+
     }
 }

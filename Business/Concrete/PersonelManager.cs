@@ -22,28 +22,38 @@ namespace Business.Concrete
 
         public IDataResult<List<Personel1>> GetAll()
         {
-            var result = _personelDal.GetAll().Where(p=>p.Iscikt == null).ToList();
-            return new SuccessDataResult<List<Personel1>>(result,Messages.ListedSuccces);
+            var result = _personelDal.GetAll().Where(p => p.Iscikt == null).ToList();
+            return new SuccessDataResult<List<Personel1>>(result, Messages.ListedSuccces);
         }
 
         public IDataResult<List<Personel1>> GetAllByDepartmanID(string departmanID)
         {
-            var result = _personelDal.GetAll().Where(p=>p.Depart == departmanID).Where(p=>p.Iscikt == null).ToList();
-            return new SuccessDataResult<List<Personel1>>(result,Messages.ListedSuccces);
+            var result = _personelDal.GetAll().Where(p => p.Depart == departmanID).Where(p => p.Iscikt == null).ToList();
+            return new SuccessDataResult<List<Personel1>>(result, Messages.ListedSuccces);
         }
 
         //HR Home Table
         public IDataResult<List<PersonelDetailDTO>> GetAllPersonelDetailDTO()
         {
             var result = _personelDal.GetAllPersonelDetailDTO();
-            return new SuccessDataResult<List<PersonelDetailDTO>>(result,Messages.ListedSuccces);
+            return new SuccessDataResult<List<PersonelDetailDTO>>(result, Messages.ListedSuccces);
         }
 
+        //Departman bazında bütün liste
         public IDataResult<List<PersonelDepartmanDetailDTO>> PersonelDepartmanDetailDTO(string departmanID)
         {
             var result = _personelDal.PersonelDepartmanDetailDTO(departmanID);
-            return new SuccessDataResult<List<PersonelDepartmanDetailDTO>>(result,Messages.ListedSuccces);
+            return new SuccessDataResult<List<PersonelDepartmanDetailDTO>>(result, Messages.ListedSuccces);
         }
 
+
+        //Vardiya atanmayanların Listesi
+        public IDataResult<List<PersonelDepartmanDetailDTO>> PersonelDepartmanNoShiftDTO(string departmanID)
+        {
+            int week = (DateTime.Now.DayOfYear) / 7;
+            var result = _personelDal.PersonelDepartmanDetailDTO(departmanID).Where(p => p.Week == null | p.Week < week).ToList();
+
+            return new SuccessDataResult<List<PersonelDepartmanDetailDTO>>(result, Messages.ListedSuccces);
+        }
     }
 }

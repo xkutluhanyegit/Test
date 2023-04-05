@@ -2054,19 +2054,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kutluhan.yegit\\.nuget\\packages\\": {}
+    "/Users/kutluhanyegit/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "/Users/kutluhanyegit/Desktop/Test/DataAccess/DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\kutluhan.yegit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\DataAccess\\obj\\",
+      "projectPath": "/Users/kutluhanyegit/Desktop/Test/DataAccess/DataAccess.csproj",
+      "packagesPath": "/Users/kutluhanyegit/.nuget/packages/",
+      "outputPath": "/Users/kutluhanyegit/Desktop/Test/DataAccess/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kutluhan.yegit\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/kutluhanyegit/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -2078,11 +2078,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Core\\Core.csproj"
+            "/Users/kutluhanyegit/Desktop/Test/Core/Core.csproj": {
+              "projectPath": "/Users/kutluhanyegit/Desktop/Test/Core/Core.csproj"
             },
-            "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\kutluhan.yegit\\Desktop\\X\\Pilsan\\Entities\\Entities.csproj"
+            "/Users/kutluhanyegit/Desktop/Test/Entities/Entities.csproj": {
+              "projectPath": "/Users/kutluhanyegit/Desktop/Test/Entities/Entities.csproj"
             }
           }
         }
@@ -2134,7 +2134,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.406/RuntimeIdentifierGraph.json"
       }
     }
   }

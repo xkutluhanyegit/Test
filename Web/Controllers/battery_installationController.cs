@@ -20,7 +20,7 @@ namespace Web.Controllers
         private readonly ILogger<battery_installationController> _logger;
         private readonly IMapper _mapper;
 
-        public battery_installationController(ILogger<battery_installationController> logger,IPersonelShiftService personelShiftService,IMapper mapper)
+        public battery_installationController(ILogger<battery_installationController> logger, IPersonelShiftService personelShiftService, IMapper mapper)
         {
             _logger = logger;
             _personelShiftService = personelShiftService;
@@ -41,38 +41,21 @@ namespace Web.Controllers
 
         [HttpPost("vardiya")]
         [RequestFormLimits(ValueCountLimit = 1000)]
-        public IActionResult shift(List<PostShift>RegisterNo,int shiftID)
+        public IActionResult shift(PersonelViewModel RegisterNo, int shiftID)
         {
-            //Now
-            var dayOffWeek = (DateTime.Now.DayOfYear/7);
-
-
-            // if (DateTime.Now.DayOfWeek == DayOfWeek.Friday)
-            // {
-                for (int i = 0; i < RegisterNo.Count(); i++)
+            for (int i = 0; i < RegisterNo.personelDepartmanNoShiftDTO.ToList().Count(); i++)
+            {
+                Personelshift ps = new Personelshift();
+                if (RegisterNo.personelDepartmanNoShiftDTO[i].Check)
                 {
-                    Personelshift ps = new Personelshift();
-                    if (RegisterNo[i].check)
-                    {
-                        ps.Sicilno = RegisterNo[i].RegisterNo;
-                        ps.Shiftid = shiftID;
-                        _personelShiftService.Add(ps);
-                    }
-                    
+                    ps.Sicilno = RegisterNo.personelDepartmanNoShiftDTO[i].RegisterNo;
+                    ps.Shiftid = shiftID;
+                    _personelShiftService.Add(ps);
                 }
 
-                return View();
+            }
 
-            // }
-            // else{
-            //     //Alert Sadece Cuma günü
-            //     return RedirectToAction("index","departman");
-            // }
-
-            
-            
-        
-
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

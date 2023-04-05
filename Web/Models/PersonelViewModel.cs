@@ -9,6 +9,7 @@ namespace Web.Models
     public class PersonelViewModel
     {
         public List<PersonelDepartmanDetailDTO> personelDepartmanDetailDTO { get; set; }
-        public List<PersonelShiftDetailDTO> personelShiftDetailDTO { get; set; }
+        public List<PersonelDepartmanDetailDTO> personelDepartmanNoShiftDTO { get; set; }
+
     }
 }
