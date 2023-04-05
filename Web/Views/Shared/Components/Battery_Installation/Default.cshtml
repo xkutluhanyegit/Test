@@ -1,0 +1,132 @@
+@* @model List<Entities.DTO.PersonelDepartmanDetailDTO> *@
+@model Web.Models.PersonelViewModel
+<div class="card">
+    <div class="card-header">
+        <h3 style="font-weight: bold;" class="card-title float-left">Personel Listesi </h3>
+
+        <button type="button" class="btn btn-primary float-right" style="width: 175px;" data-toggle="modal" data-target="#shiftModal">
+            <i class="fa-regular fa-file-lines mr-3"></i> Vardiya Belirle
+        </button>
+        <a href="#" style="width: 175px;" class="btn btn-success float-right mr-3"><i class="fa-regular fa-file-lines mr-3"></i> Mesai Belirle</a>
+        
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="departman-table" class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Personel Ad Soyad</th>
+                    <th>Departman</th>
+                    <th>Servis</th>
+                    <th>Durak</th>
+                    <th>Vardiya</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                 @{
+                    int count = 1;
+                    @foreach (var item in Model.personelDepartmanDetailDTO)
+                    {
+                     <tr>
+                    <td>@count</td>
+                    <td>@item.Name @item.Surname</td>
+                    <td>@item.DepartmanName</td>
+                    <td>@item.ServiceName</td>
+                    <td>@item.StationName</td>
+                    <td>Shift</td>
+                    </tr>
+                    count++; 
+                    }
+                } 
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>Personel Ad Soyad</th>
+                    <th>Departman</th>
+                    <th>Servis</th>
+                    <th>Durak</th>
+                    <th>Vardiya</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="shiftModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Vardiya Atanmamış Personel Listesi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form asp-controller="battery_installation" asp-action="shift" method="post">
+        
+              <div class="modal-body"><div id="radio-buttons" class="btn-group btn-group-toggle col mb-2" data-toggle="buttons">
+
+                    <label class="btn btn-dark active col-2 float-left btn-sm">
+                        <input type="radio" name="options" id="option0" value="0" autocomplete="off" disabled>
+                        Vardiya
+                        <i class="fa-solid fa-angles-right"></i>
+                    </label>
+
+                    <label class="btn btn-outline-primary active col-2 float-left btn-sm">
+                        <input type="radio" name="options" id="option1" value="1" autocomplete="off" checked>
+                        08:00
+                        -
+                        16:00
+                    </label>
+
+                    <label class="btn btn-outline-primary col-2 float-left btn-sm">
+                        <input type="radio" name="options" id="option2" value="2" autocomplete="off"> 16:00 -
+                        24:00
+                    </label>
+
+                    <label class="btn btn-outline-primary col-2 float-left btn-sm">
+                        <input type="radio" name="options" id="option3" value="3" autocomplete="off"> 00:00 -
+                        08:00
+                    </label>
+
+                    <label class="btn btn-outline-success col-2 float-left btn-sm">
+                        <input type="radio" name="options" id="option4" value="4" autocomplete="off"> 08:00 -
+                        18:00
+                    </label>
+                </div>
+                <input hidden type="text" name="shiftID" id="shiftID" value="1">
+                <table id="departman-shift-table" class="table table-bordered table-striped table-sm" style="cursor: pointer;">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 30px;"><i class="fa-solid fa-square-check fa-beat" style="color: #14a44d;"></i></th>
+                            <th hidden>.</th>
+                            <th>Personel Ad Soyad</th>
+                            <th>Departman</th>
+                            <th>Servis</th>
+                        </tr>
+                    </thead>
+                    @*  *@
+                    <tfoot>
+                        <tr>
+                            <th class="text-center" style="width: 30px;"><i class="fa-solid fa-square-check fa-beat" style="color: #14a44d;"></i></th>
+                            <th hidden>.</th>
+                            <th>Personel Ad Soyad</th>
+                            <th>Departman</th>
+                            <th>Servis</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button style="width: 175px;" type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk fa-beat mr-3"></i> Kaydet</button>
+            </div>
+      </form>
+
+    </div>
+  </div>
+</div>
